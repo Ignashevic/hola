@@ -56,16 +56,19 @@ public class Hola {
 		librojava.numeropaginas = 320;
 		librojava.nombre = "Java 7";
 		librojava.autor = "Roberto Montero Miguel";
+		librojava.horas = 250f;
 		librojava.escribir(50);
+		librojava.tiempo(librojava.horas);
 		System.out.println(librojava.describete());
 
 		// Libro de PHP
 		Libro librophp = new Libro();
+		librophp.horas = 20f;
 		librophp.numeropaginas = 725;
 		librophp.nombre = "PHP y MySQL";
 		librophp.autor = "Mi primo";
 		librophp.escribir(200);
-
+		librophp.tiempo(librophp.horas);
 		System.out.println(librophp.describete());
 
 	}

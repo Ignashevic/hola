@@ -12,10 +12,12 @@ public class Libro {
 	public int numeropaginas;
 	public String nombre;
 	public String autor;
+	public float horas;
 
 	// metodos o funciones de la clase libro
 	public String describete() {
-		return "Descripcion: " + this.nombre + " , " + this.numeropaginas + " paginas y fue escrito por " + this.autor;
+		return "Descripcion: " + this.nombre + " , " + this.numeropaginas + " paginas y fue escrito por " + this.autor
+				+ " y tardare " + this.horas + " horas";
 	}
 
 	/**
@@ -26,6 +28,10 @@ public class Libro {
 	 */
 	public void escribir(int numpaginas) {
 		this.numeropaginas += numpaginas;
+	}
+
+	public void tiempo(float horas) {
+		this.horas++;
 	}
 
 }
