@@ -1,0 +1,10 @@
+#########################
+#fiheros ignorados por git
+#########################
+
+# clases compiladas de java .class
+/bin/
+
+#configuacion de eclipse
+/.classpath
+/.project
