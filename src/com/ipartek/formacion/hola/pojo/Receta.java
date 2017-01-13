@@ -1,12 +1,12 @@
 package com.ipartek.formacion.hola.pojo;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Receta {
 
 	// declaracion atributos
 	private String titulo;
-	Ingrediente[] aingredientes;
+	ArrayList<Ingrediente> aingredientes;
 	private int tiempo;
 	private String dificultad;
 	private int comensales;
@@ -19,7 +19,7 @@ public class Receta {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Receta(String titulo, Ingrediente[] aingredientes, int tiempo, String dificultad, int comensales,
+	public Receta(String titulo, ArrayList<Ingrediente> aingredientes, int tiempo, String dificultad, int comensales,
 			String descripcion) {
 		super();
 		this.titulo = titulo;
@@ -39,11 +39,11 @@ public class Receta {
 		this.titulo = titulo;
 	}
 
-	public Ingrediente[] getAingredientes() {
+	public ArrayList<Ingrediente> getAingredientes() {
 		return aingredientes;
 	}
 
-	public void setAingredientes(Ingrediente[] aingredientes) {
+	public void setAingredientes(ArrayList<Ingrediente> aingredientes) {
 		this.aingredientes = aingredientes;
 	}
 
@@ -81,10 +81,26 @@ public class Receta {
 
 	// otros metodos
 
+	public void addIngrediente(Ingrediente ingrediente) {
+
+	}
+
+	/**
+	 * Elimina el primer ingrediente que encuentre con el mismo
+	 * <code>nombre</code> CaseInsesitive
+	 * 
+	 * @param ingrediente
+	 *            ingrediente a eliminar
+	 * @return true si eliminar ingrediente false en caso contrario
+	 */
+	public boolean removeIngrediente(Ingrediente ingrediente) {
+		return true;
+	}
+
 	public boolean glutenFree() {
 
-		for (int i = 0; i < this.aingredientes.length; i++) {
-			if (aingredientes[i].isGluten()) {
+		for (int i = 0; i < this.aingredientes.size(); i++) {
+			if (aingredientes.get(i).isGluten()) {
 				return true;
 			}
 		}
@@ -93,8 +109,8 @@ public class Receta {
 
 	@Override
 	public String toString() {
-		return "Receta [titulo=" + titulo + ", aingredientes=" + Arrays.toString(aingredientes) + ", tiempo=" + tiempo
-				+ ", dificultad=" + dificultad + ", comensales=" + comensales + ", descripcion=" + descripcion + "]";
+		return "Receta [titulo=" + titulo + ", aingredientes=" + aingredientes + ", tiempo=" + tiempo + ", dificultad="
+				+ dificultad + ", comensales=" + comensales + ", descripcion=" + descripcion + "]";
 	}
 
 }
