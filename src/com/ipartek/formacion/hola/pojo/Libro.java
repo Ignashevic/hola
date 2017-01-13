@@ -1,37 +1,76 @@
 package com.ipartek.formacion.hola.pojo;
 
-/**
- * Clase {@code Libro} representa un libro
- * 
- * @author Curso
- * 
- */
 public class Libro {
 
-	// Atributos
-	public int numeropaginas;
-	public String nombre;
-	public String autor;
-	public float horas;
+	// atributos
+	private String titulo;
+	private String autor;
+	private int numeropaginas;
 
-	// metodos o funciones de la clase libro
-	public String describete() {
-		return "Descripcion: " + this.nombre + " , " + this.numeropaginas + " paginas y fue escrito por " + this.autor
-				+ " y tardare " + this.horas + " horas";
-	}
-
-	/**
-	 * Aumento el numero de paginas dependiendo de el numero que reciba
+	/*
+	 * Constructores
 	 * 
-	 * @param numpaginas
-	 *            numero paginas nuevas escritas
+	 * Sirven para instanciar/crear objetos de la clase </br> Tienen el mismo
+	 * nombre que la clase No hace falta especificar el <code>return</code>
+	 * 
+	 * sobrecarga: es un metodo con el mismo nombre y mismo return, pero </br>
+	 * con diferentes parametros
+	 * 
 	 */
-	public void escribir(int numpaginas) {
-		this.numeropaginas += numpaginas;
+
+	// constructor por defecto
+	public Libro() {
+		super();
+		this.numeropaginas = 0;
+		this.autor = "anonimo";
+		this.titulo = "desconocido";
 	}
 
-	public void tiempo(float horas) {
-		this.horas++;
+	// constructor con parametros
+	public Libro(String titulo, int numeropaginas) {
+		super();
+		this.titulo = titulo;
+		this.autor = "anonimo";
+		this.setNumeropaginas(numeropaginas);
+	}
+
+	public Libro(String titulo, String autor, int numeropaginas) {
+		super();
+		this.titulo = titulo;
+		this.autor = autor;
+		this.numeropaginas = numeropaginas;
+	}
+
+	// getters y setters
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public int getNumeropaginas() {
+		return numeropaginas;
+	}
+
+	public void setNumeropaginas(int numeropaginas) {
+		this.numeropaginas = (numeropaginas < 0) ? 0 : numeropaginas;
+	}
+
+	// otros metodos
+
+	@Override
+	public String toString() {
+		return "Libro [titulo=" + titulo + ", autor=" + autor + ", numeropaginas=" + numeropaginas + "]";
 	}
 
 }
