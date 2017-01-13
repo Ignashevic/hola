@@ -1,6 +1,6 @@
 package com.ipartek.formacion.hola;
 
-import com.ipartek.formacion.hola.pojo.Libro;
+import com.ipartek.formacion.hola.pojo.LibroNoEncapsulado;
 
 /**
  * Clase que divide numeros aleatorios en par o impar
@@ -52,23 +52,20 @@ public class Hola {
 		// instanciar un objeto de la clase libro
 
 		// Libro de Java
-		Libro librojava = new Libro();
+		LibroNoEncapsulado librojava = new LibroNoEncapsulado();
 		librojava.numeropaginas = 320;
 		librojava.nombre = "Java 7";
 		librojava.autor = "Roberto Montero Miguel";
-		librojava.horas = 250f;
 		librojava.escribir(50);
-		librojava.tiempo(librojava.horas);
 		System.out.println(librojava.describete());
 
 		// Libro de PHP
-		Libro librophp = new Libro();
-		librophp.horas = 20f;
+		LibroNoEncapsulado librophp = new LibroNoEncapsulado();
 		librophp.numeropaginas = 725;
 		librophp.nombre = "PHP y MySQL";
 		librophp.autor = "Mi primo";
 		librophp.escribir(200);
-		librophp.tiempo(librophp.horas);
+
 		System.out.println(librophp.describete());
 
 	}
