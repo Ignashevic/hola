@@ -23,7 +23,7 @@ public class Receta {
 			String descripcion) {
 		super();
 		this.titulo = titulo;
-		this.aingredientes = aingredientes;
+		setAingredientes(aingredientes);
 		this.tiempo = tiempo;
 		this.dificultad = dificultad;
 		this.comensales = comensales;
@@ -44,7 +44,7 @@ public class Receta {
 	}
 
 	public void setAingredientes(ArrayList<Ingrediente> aingredientes) {
-		this.aingredientes = aingredientes;
+		this.aingredientes = (aingredientes == null) ? new ArrayList<Ingrediente>() : aingredientes;
 	}
 
 	public int getTiempo() {
@@ -81,8 +81,43 @@ public class Receta {
 
 	// otros metodos
 
+	/**
+	 * comprueba si contiene el ingrediente pasado como parametro
+	 * 
+	 * @param ingrediente
+	 *            {@code Ingrediente} a buscar
+	 * @return true si cotiene el ingrediente</br>
+	 *         falso en caso contrario
+	 * 
+	 */
+	public boolean contiene(Ingrediente ingrediente) {
+		boolean resul = false;
+		if (ingrediente != null) {
+			final String NOMBRE_INGREDIENTE_BUSCAR = ingrediente.getNombre();
+			Ingrediente iterate = null;
+			for (int i = 0; i < this.aingredientes.size(); i++) {
+				iterate = this.aingredientes.get(i);
+				if (NOMBRE_INGREDIENTE_BUSCAR.equalsIgnoreCase(iterate.getNombre())) {
+					resul = true;
+					break;
+				}
+			}
+		}
+		return resul;
+
+	}
+
+	/**
+	 * TODO cuando sea null lanzar exception personalizada </br>
+	 * Añadimos un nuevo {@code ingrediente} a la receta
+	 * 
+	 * @param ingrediente
+	 *            si es null o hace nada
+	 */
 	public void addIngrediente(Ingrediente ingrediente) {
-		this.aingredientes.add(ingrediente);
+		if (ingrediente != null) {
+			this.aingredientes.add(ingrediente);
+		}
 	}
 
 	/**
@@ -94,9 +129,18 @@ public class Receta {
 	 * @return true si eliminar ingrediente false en caso contrario
 	 */
 	public boolean removeIngrediente(Ingrediente ingrediente) {
-		boolean resul = this.aingredientes.contains(ingrediente);
-		if (this.aingredientes.remove(ingrediente)) {
-			resul = true;
+		boolean resul = false;
+		if (ingrediente != null) {
+			final String NOMBRE_INGREDIENTE_ELIMINAR = ingrediente.getNombre();
+			Ingrediente iterateingredient = null;
+			for (int i = 0; i < this.aingredientes.size(); i++) {
+				iterateingredient = this.aingredientes.get(i);
+				if (NOMBRE_INGREDIENTE_ELIMINAR.equalsIgnoreCase(iterateingredient.getNombre())) {
+					this.aingredientes.remove(i);
+					resul = true;
+					break;
+				}
+			}
 		}
 		return resul;
 	}
