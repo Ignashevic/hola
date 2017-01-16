@@ -82,7 +82,7 @@ public class Receta {
 	// otros metodos
 
 	public void addIngrediente(Ingrediente ingrediente) {
-
+		this.aingredientes.add(ingrediente);
 	}
 
 	/**
@@ -94,7 +94,11 @@ public class Receta {
 	 * @return true si eliminar ingrediente false en caso contrario
 	 */
 	public boolean removeIngrediente(Ingrediente ingrediente) {
-		return true;
+		boolean resul = this.aingredientes.contains(ingrediente);
+		if (this.aingredientes.remove(ingrediente)) {
+			resul = true;
+		}
+		return resul;
 	}
 
 	public boolean glutenFree() {
