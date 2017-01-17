@@ -1,5 +1,7 @@
 package com.ipartek.formacion.recetas.ejercicios.herencia;
 
+import java.util.ArrayList;
+
 /**
  * Listar todos los vehiculos del concesionario
  * 
@@ -50,12 +52,28 @@ public class EjercicioConcesionario {
 		Xsara.setCapacidadCombustible(95);
 		Astra.setCapacidadCombustible(98);
 
-		System.out.println(Prius.toString());
-		System.out.println(Ibiza.toString());
-		System.out.println(Fordfi.toString());
-		System.out.println(Tesla.toString());
-		System.out.println(Xsara.toString());
-		System.out.println(Astra.toString());
+		// arraylist de vehiculos para mostrar sin tanto syso
+		ArrayList<Vehiculo> stock = new ArrayList<Vehiculo>();
+		stock.add(Prius);
+		stock.add(Ibiza);
+		stock.add(Fordfi);
+		stock.add(Tesla);
+		stock.add(Xsara);
+		stock.add(Astra);
+
+		// mostrar por pantalla
+		for (Vehiculo vehiculo : stock) {
+			System.out.println("--------------------------------------------");
+			System.out.println("---- " + vehiculo.getModelo());
+			System.out.println("--------------------------------------------");
+			System.out.println("Plazas: " + vehiculo.getPlazas());
+			System.out.println("Potencia: " + vehiculo.getPotencia());
+			if (vehiculo instanceof VehiculoElectrico) {
+				System.out.println("Capacidad Bateria: " + ((VehiculoElectrico) vehiculo).getCapacidadBaterias());
+			} else if (vehiculo instanceof VehiculoDiesel) {
+				System.out.println("Capacidad combustible: " + ((VehiculoDiesel) vehiculo).getCapacidadCombustible());
+			}
+		}
 
 	}
 }
