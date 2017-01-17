@@ -44,7 +44,7 @@ public class Ingrediente {
 	// otros metodos
 	@Override
 	public String toString() {
-		return "Ingrediente [cantidad=" + cantidad + ", nombre=" + nombre + ", gluten=" + gluten + "]";
+		return "Ingrediente: " + cantidad + ", " + nombre + " , " + gluten;
 	}
 
 }

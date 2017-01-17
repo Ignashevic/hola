@@ -5,18 +5,39 @@ import java.util.ArrayList;
 public class Receta {
 
 	// declaracion atributos
+	public final String IMG_DEFAULT = "http://ilsole.com.ar/wp-content/uploads/2016/07/Icon-Recipe.png";
 	private String titulo;
 	ArrayList<Ingrediente> aingredientes;
 	private int tiempo;
 	private String dificultad;
 	private int comensales;
 	private String descripcion;
+	private String imagen;
 
 	// constructor
+
+	public String getImagen() {
+		return IMG_DEFAULT;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 
 	public Receta() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Receta(String titulo) {
+		super();
+		this.titulo = titulo;
+		this.imagen = IMG_DEFAULT;
+		setAingredientes(null);
+		this.tiempo = 0;
+		this.dificultad = "facil";
+		this.comensales = 0;
+		this.descripcion = "Lorem Ipsun...";
 	}
 
 	public Receta(String titulo, ArrayList<Ingrediente> aingredientes, int tiempo, String dificultad, int comensales,
@@ -25,6 +46,7 @@ public class Receta {
 		this.titulo = titulo;
 		setAingredientes(aingredientes);
 		this.tiempo = tiempo;
+		this.imagen = IMG_DEFAULT;
 		this.dificultad = dificultad;
 		this.comensales = comensales;
 		this.descripcion = descripcion;
@@ -158,7 +180,8 @@ public class Receta {
 	@Override
 	public String toString() {
 		return "Receta [titulo=" + titulo + ", aingredientes=" + aingredientes + ", tiempo=" + tiempo + ", dificultad="
-				+ dificultad + ", comensales=" + comensales + ", descripcion=" + descripcion + "]";
+				+ dificultad + ", comensales=" + comensales + ", descripcion=" + descripcion + ", imagen=" + imagen
+				+ "]";
 	}
 
 }
