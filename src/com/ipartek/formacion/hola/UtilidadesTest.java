@@ -8,6 +8,30 @@ import org.junit.Test;
 public class UtilidadesTest {
 
 	@Test
+	public void bubblesort(){
+		
+		int[] aDesordenado = {3,0,1,8,7,2,5,4,6,9};
+		int[] aOrdenados = Utilidades.bubblesort(aDesordenado);
+	
+		assertEquals(0,aOrdenados[0]);
+		assertEquals(1,aOrdenados[1]);
+		assertEquals(2,aOrdenados[2]);
+		assertEquals(3,aOrdenados[3]);
+		assertEquals(4,aOrdenados[4]);
+		assertEquals(5,aOrdenados[5]);
+		assertEquals(6,aOrdenados[6]);
+		assertEquals(7,aOrdenados[7]);
+		assertEquals(8,aOrdenados[8]);
+		assertEquals(9,aOrdenados[9]);
+		
+	}
+	
+	
+	
+	
+	
+	
+	@Test
 	public void testGetNumeroAleatorio() {
 		int numero = -1;
 		final int NUMERO_MAXIMO = 10;
@@ -52,4 +76,5 @@ public class UtilidadesTest {
 	public void testNoFallaNunca() {
 		assertTrue(true);
 	}
+
 }

@@ -52,6 +52,10 @@ public class Vehiculo {
 		this.modelo = modelo;
 	}
 
+	/**
+	 * Al ser un metodo final no puede ser sobreescrito por los hijos
+	 */
+
 	@Override
 	public String toString() {
 		return "Vehiculo modelo=" + modelo + ", plazas=" + plazas + ", dimensiones=" + dimensiones + ", potencia="

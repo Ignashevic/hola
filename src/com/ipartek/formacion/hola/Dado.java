@@ -33,4 +33,20 @@ public class Dado {
 		listarForEach();
 	}
 
+	static public int getNumeroAleatorio(int maximoValor) {
+
+		int aleatorio = (int) (Math.random() * maximoValor);
+		return aleatorio;
+	}
+
+	public static String afortunado() {
+		String[] aAlumnos = { "Aaron", "Eneko", "Itsaso", "Ivan", "Guillermo", "Lozolla", "Josu", "Ignacio", "Gomez",
+				"Nerea", "Nagore", "Garbiñe", "Egoitz", "Pavel", "Pérez" };
+
+		int numAleatorio = Utilidades.getNumeroAleatorio(aAlumnos.length - 1);
+		String afortunado = aAlumnos[numAleatorio];
+
+		return "El/a afortunado es: " + afortunado;
+	}
+
 }

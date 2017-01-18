@@ -22,6 +22,23 @@ public class Utilidades {
 		int aleatorio = (int) (Math.random() * maximoValor);
 		return aleatorio;
 	}
+	
+	/**
+	 * Ordenacion en burbuja para un array de enteros
+	 * @see https://www.youtube.com/watch?v=lyZQPjUT5B4
+	 * @param aDesordenado
+	 * @return
+	 */
+	static public int[] bubblesort( int[] aDesordenado){
+		
+		for (int i = 0; i < aDesordenado.length; i++) {
+			
+			
+		}
+		
+		
+		return aDesordenado;
+	}
 
 	/**
 	 * Suma rara que se inventa el jefe, no me digas para que
