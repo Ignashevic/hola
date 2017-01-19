@@ -24,8 +24,9 @@ public class VehiculoDiesel extends Vehiculo {
 		this.capacidadCombustible = capacidadCombustible;
 	}
 
-	public void arrancar() {
-		System.out.println("Arrancando super velocidad!");
+	public String arrancar() {
+		
+		return "Arrancando super velocidad!";
 	}
 
 	@Override

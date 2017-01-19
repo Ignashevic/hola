@@ -43,6 +43,8 @@ public class RecetaTest {
 	public void tearDown() throws Exception {
 
 	}
+	
+	
 
 	@Test
 	public void testAddIngrediente() {

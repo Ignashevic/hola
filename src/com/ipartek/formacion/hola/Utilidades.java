@@ -30,10 +30,18 @@ public class Utilidades {
 	 * @return
 	 */
 	static public int[] bubblesort( int[] aDesordenado){
-		
-		for (int i = 0; i < aDesordenado.length; i++) {
-			
-			
+		int aux = 0;
+		boolean flag = true;
+		while(flag){
+			flag = false;
+			for (int i = 0; i < aDesordenado.length - 1; i++) {
+				if(aDesordenado[i] > aDesordenado[i + 1]){				
+					aux = aDesordenado[i];
+					aDesordenado[i] = aDesordenado[i + 1];
+					aDesordenado[i + 1] = aux;
+					flag = true;
+				}
+			}
 		}
 		
 		

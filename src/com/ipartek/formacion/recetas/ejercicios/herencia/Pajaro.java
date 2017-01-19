@@ -1,12 +1,14 @@
 package com.ipartek.formacion.recetas.ejercicios.herencia;
 
-public class Pajaro extends Animal implements Volador, Vendible {
+public class Pajaro extends Animal implements Volador, Vendible , IEstupida {
 
 	boolean volar = false;
+	private int numHuevosSemana;
 
 	public Pajaro(boolean volar) {
 		super();
 		this.volar = volar;
+		this.numHuevosSemana = 0;
 	}
 
 	public Pajaro() {
@@ -24,6 +26,14 @@ public class Pajaro extends Animal implements Volador, Vendible {
 
 	public void setVolar(boolean volar) {
 		this.volar = volar;
+	}
+	
+	public int getNumHuevosSemana() {
+		return numHuevosSemana;
+	}
+
+	public void setNumHuevosSemana(int numHuevosSemana) {
+		this.numHuevosSemana = numHuevosSemana;
 	}
 
 	@Override
@@ -44,6 +54,11 @@ public class Pajaro extends Animal implements Volador, Vendible {
 		System.out.println("Para despegar : " + this.despegar());
 		System.out.println("Para aterrizar : " + this.aterrizar());
 		
+	}
+
+	@Override
+	public int getPeso() {
+		return this.numHuevosSemana;
 	}
 
 }

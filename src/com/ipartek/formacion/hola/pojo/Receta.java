@@ -1,9 +1,14 @@
 package com.ipartek.formacion.hola.pojo;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Receta {
+public class Receta implements Comparable<Receta> , Comparator<Receta> {
 
+	public static final String DIFICULTAD_FACIL="Facil";
+	public static final String DIFICULTAD_MODERADA="Moderada";
+	public static final String DIFICULTAD_DIFICIL="Dificil";
+	
 	// declaracion atributos
 	public final String IMG_DEFAULT = "http://ilsole.com.ar/wp-content/uploads/2016/07/Icon-Recipe.png";
 	private String titulo;
@@ -183,5 +188,21 @@ public class Receta {
 				+ dificultad + ", comensales=" + comensales + ", descripcion=" + descripcion + ", imagen=" + imagen
 				+ "]";
 	}
+	
+	@Override
+	public int compare(Receta o1, Receta o2) {
+		int resul = -1;
+		if(o1.getDificultad().equals(o2.getDificultad())){
+			resul = 0;
+		}
+		return resul;
+	}
 
+	
+	
+	//comparar el objeto actual con el que se pasa por parametro y te lo ordena por titulo
+	@Override
+	public int compareTo(Receta o) {
+		return this.getTitulo().compareTo(o.getTitulo());
+	}
 }
