@@ -1,4 +1,4 @@
-package com.ipartek.formacion.recetas.ejercicios.collection;
+package com.ipartek.formacion.hola.pojo.comparators;
 
 import java.util.Comparator;
 

@@ -1,5 +1,7 @@
 package com.ipartek.formacion.recetas.ejercicios.herencia;
 
+import com.ipartek.formacion.recetas.ejercicios.collection.IEstupida;
+
 public class Vehiculo implements Conducible, IEstupida {
 
 	private String modelo;

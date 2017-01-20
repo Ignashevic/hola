@@ -1,5 +1,7 @@
 package com.ipartek.formacion.recetas.ejercicios.herencia;
 
+import com.ipartek.formacion.recetas.ejercicios.collection.IEstupida;
+
 public class Pajaro extends Animal implements Volador, Vendible , IEstupida {
 
 	boolean volar = false;

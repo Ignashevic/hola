@@ -18,7 +18,8 @@ public class Receta implements Comparable<Receta> , Comparator<Receta> {
 	private int comensales;
 	private String descripcion;
 	private String imagen;
-
+	
+	
 	// constructor
 
 	public String getImagen() {

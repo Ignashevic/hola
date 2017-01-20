@@ -1,4 +1,4 @@
-package com.ipartek.formacion.recetas.ejercicios.herencia;
+package com.ipartek.formacion.recetas.ejercicios.collection;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.ipartek.formacion.recetas.ejercicios.collection.ComparatorRecetaNivelDificultad;
+import com.ipartek.formacion.hola.pojo.comparators.ComparatorRecetaNivelDificultad;
+import com.ipartek.formacion.recetas.ejercicios.herencia.Pajaro;
+import com.ipartek.formacion.recetas.ejercicios.herencia.Vehiculo;
 
 public class ComparacionEstupidaTest {
 	
@@ -28,10 +30,13 @@ public class ComparacionEstupidaTest {
 	public void setUp() throws Exception {
 		v1.setModelo("Seat");
 		v1.setPotencia(500);
+		
 		v2.setModelo("Ford KA");
 		v2.setPotencia(100);
+		
 		p1.setNumHuevosSemana(2);
 		p1.setRaza("Kiwi");
+		
 		p2.setNumHuevosSemana(700);
 		p2.setRaza("Gallina");
 		

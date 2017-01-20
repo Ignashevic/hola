@@ -11,7 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.ipartek.formacion.hola.pojo.Ingrediente;
 import com.ipartek.formacion.hola.pojo.Receta;
+import com.ipartek.formacion.hola.pojo.comparators.ComparatorRecetaNivelDificultad;
 
 public class ComparacionesTest {
 	
@@ -27,6 +29,22 @@ public class ComparacionesTest {
 		solomillo.setDificultad(Receta.DIFICULTAD_MODERADA);
 		marmitako.setDificultad(Receta.DIFICULTAD_DIFICIL);
 		tortilla.setDificultad(Receta.DIFICULTAD_FACIL);
+		
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		marmitako.addIngrediente(new Ingrediente(4, "patatas", false));
+		
+		solomillo.addIngrediente(new Ingrediente(4, "carne", false));
+		solomillo.addIngrediente(new Ingrediente(500, "ajo", false));
+		
+		tortilla.addIngrediente(new Ingrediente(4, "huevos", false));
+		tortilla.addIngrediente(new Ingrediente(500, "patatas", false));
+		tortilla.addIngrediente(new Ingrediente(4, "cebolla", false));
+		tortilla.addIngrediente(new Ingrediente(500, "pimiento", false));
 		
 
 		recetas.add(solomillo);
@@ -72,6 +90,16 @@ public class ComparacionesTest {
 		assertEquals(tortilla, recetas.get(0));
 		assertEquals(solomillo, recetas.get(1));
 		assertEquals(marmitako, recetas.get(2));
+	}
+	
+	@Test
+	public void ComparatorIngredientes(){
+		
+		Collections.sort(recetas, new ComparatorCantidadIngredientes() );
+		
+		assertEquals("Error tortilla",tortilla, recetas.get(1));
+		assertEquals("Error solomillo",solomillo, recetas.get(0));
+		assertEquals("Error MARMITAKO",marmitako, recetas.get(2));
 	}
 
 }
